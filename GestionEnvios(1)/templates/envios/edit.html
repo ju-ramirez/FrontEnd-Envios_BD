@@ -1,0 +1,73 @@
+{% include 'header.html' %}
+
+
+<div class="container">
+    <div style="padding-top: 15vh;">
+    <h2>Formulario para editar</h2>
+    {% for dato in envios %}
+        
+        <form method="POST" action="/update" enctype="multipart/form-data">
+
+            <h5 class="card-title">ID: </h5>
+            <input type="text" value="{{dato [0]}}" name="txtID" id="txtID"  class="form-control-range">
+
+            <h5 class="card-title">Cliente:</h5>
+            <input type="text" value="{{dato [1]}}" name="txtCliente" id="txtCliente"  class="form-control-range"><br>
+
+            <h5 class="card-title">Direccion: </h5>
+            <input type="text" value="{{dato [2]}}" name="txtDirecc" id="txtDirecc"  class="form-control-range"><br>
+
+            <h5 class="card-title">Localidad: </h5>
+            <input type="text" value="{{dato [3]}}" name="txtLocalid" id="txtLocalid"  class="form-control-range"><br>
+
+            <h5 class="card-title">Provincia: </h5>
+            <input type="text" value="{{dato [4]}}" name="txtProv" id="txtProv"  class="form-control-range"><br>
+
+            <h5 class="card-title">Correo</h5>
+            <input type="email" value="{{dato [5]}}" name="txtCorreo" id="txtCorreo"  class="form-control-range"><br>
+
+            <br> 
+            <h5 class="card-title">Paquete - Hasta: </h5> <button type="button" class="btn btn-outline-secondary">{{dato [6]}} </button>
+                                
+            <div class="card-group card-body">
+                <div class="card-body">
+                    <h5 class="card-title">Sobre</h5>
+                    <i class="fas fa-envelope"></i>
+                    <p class="card-text">Sobre - 1kg</p>
+                    <input type="radio" name="paquete"  value="Sobre">
+                </div>
+                <div class="card-body"> 
+                    <h5 class="card-title">Pack 1</h5>
+                    <i class="fas fa-box"></i>
+                    <p class="card-text">Paquete - 2kg </p>
+                    <input type="radio" name="paquete"  value="Pack-1">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Pack 2</h5>
+                    <i class="fas fa-box"></i>
+                    <p class="card-text">Paquete - 5kg </p>
+                    <input type="radio" name="paquete"  value="Pack-2">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Box 1</h5>
+                    <i class="fas fa-archive"></i>
+                    <p class="card-text">Caja - 10kg</p>
+                    <input type="radio" name="paquete"  value="Caja-1">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Box 2</h5>
+                    <i class="fas fa-archive"></i>
+                    <p class="card-text">Caja - 20kg</p>
+                    <input type="radio" name="paquete"  value="Caja-2">
+                </div>
+            </div>
+            <input type="submit" value="Confirmar" class="btn btn-success">
+        </form>
+    
+    {% endfor %}
+</div>
+</div>
+<br><br>
+
+
+{% include 'footer.html' %}
